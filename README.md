@@ -2,7 +2,7 @@
 
 **Find the change. Skip the noise.** A tiny, private workspace for comparing two JSON responses — no signup, no uploads, no build step.
 
-[中文说明](#中文说明) · [Download v0.1.0](https://github.com/boyfeiyu/json-diff-lens/releases/tag/v0.1.0) · [Report a bug](https://github.com/boyfeiyu/json-diff-lens/issues)
+[Try it live](https://boyfeiyu.github.io/json-diff-lens/) · [中文说明](#中文说明) · [Download v0.1.0](https://github.com/boyfeiyu/json-diff-lens/releases/tag/v0.1.0) · [Report a bug](https://github.com/boyfeiyu/json-diff-lens/issues)
 
 ![JSON Diff Lens comparing two sample API responses](assets/demo.png)
 
