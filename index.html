@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Spot what changed between two JSON responses. Private, offline-capable JSON diff with structure mode and Markdown reports. No signup, no dependencies.">
+  <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>JSON Diff Lens — less noise, more signal</title>
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./diff.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+<div class="shell">
+  <header><a class="brand" href="./"><span class="logo" aria-hidden="true">{↔}</span> JSON Diff Lens <span class="version">v0.1</span></a><a href="https://github.com/boyfeiyu/json-diff-lens">Source ↗</a></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">A LITTLE CLARITY FOR YOUR API</p><h1>Find the change.<br><span>Skip the noise.</span></h1><p class="lede">Two JSON responses. One clear picture.<br>Catch changed values, missing fields, and sneaky type changes.</p></div><aside class="privacy"><span class="privacy-dot" aria-hidden="true"></span><strong>Your data stays here.</strong><p>Compared in your browser. No uploads,<br>no analytics, no saved inputs.</p></aside></section>
+    <section aria-label="JSON inputs">
+      <div class="toolbar"><div class="examples"><span>Try a story</span><button data-example="api">API surprise</button><button data-example="order">Key shuffle</button><button data-example="types">Type trap</button></div><div><button id="swap">Swap ↔</button><button id="clear">Clear</button></div></div>
+      <div class="editors">
+        <div class="editor"><div class="editor-head"><label for="before"><span class="step">01</span> Before</label><label class="file-label">Open JSON<input id="before-file" type="file" accept=".json,application/json,text/plain"></label></div><textarea id="before" spellcheck="false" placeholder='{"hello": "before"}' aria-describedby="input-hint"></textarea></div>
+        <div class="editor"><div class="editor-head"><label for="after"><span class="step">02</span> After</label><label class="file-label">Open JSON<input id="after-file" type="file" accept=".json,application/json,text/plain"></label></div><textarea id="after" spellcheck="false" placeholder='{"hello": "after"}' aria-describedby="input-hint"></textarea></div>
+      </div>
+      <div class="compare-bar"><div><label class="toggle"><input type="checkbox" id="structure"> Structure only <span>Ignore scalar value changes</span></label><p id="input-hint">Object key order is ignored. Arrays are compared by position. Up to 1 MiB per input.</p></div><button class="primary" id="compare">Compare JSON <span aria-hidden="true">↗</span></button></div>
+    </section>
+    <p id="error" role="alert" hidden></p>
+    <section class="results" aria-labelledby="result-title"><div class="result-heading"><div><p class="eyebrow">THE DIFFERENCE</p><h2 id="result-title">A small change. A clear story.</h2></div><button id="export" disabled>Download Markdown ↓</button></div><div id="stats" class="stats"></div><div class="filter-row"><label for="filter">Filter paths</label><input id="filter" type="search" placeholder="e.g. /user" disabled><span id="filter-count"></span></div><div id="changes" aria-live="polite"></div><p class="result-note">Paths use JSON Pointer: <code>~1</code> means <code>/</code>, <code>~0</code> means <code>~</code>. Root is shown as <code>(root)</code>. A diff is an observation, not a compatibility verdict.</p></section>
+  </main>
+  <footer><span>Made for the “wait, what changed?” moments.</span><span>Local first · MIT licensed · <a href="https://github.com/boyfeiyu/json-diff-lens/issues">Report a bug ↗</a></span></footer>
+</div>
+</body>
+</html>
